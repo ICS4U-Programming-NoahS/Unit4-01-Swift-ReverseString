@@ -1,5 +1,5 @@
 //
-// SelectSort.swift
+// ReverseString.swift
 //
 // Created by Noah Smith
 // Created on 2025-04-17
@@ -21,12 +21,14 @@ func reverseString(_ string: String) -> String {
     if string.count == 0 {
 
         // Return the empty string
-        return string;
+        return string
 
     // Recursive case
     } else {
 
         // Source: https://www.programiz.com/swift-programming/library/string/dropfirst
+        // Return the reversed string, dropping the first character
+        // and adding the first character to the end
         return reverseString(String(string.dropFirst())) + String(string.first!)
     }
 }
@@ -47,13 +49,13 @@ let inputPath = "./input.txt"
 // Create output file
 let outputPath = "./output.txt"
 
-do { 
+do {
     // Read the content of the input file
     let fileContent = try String(contentsOfFile: inputPath)
 
     // Split up the strings by a new line
     let arrayStr = fileContent.components(separatedBy: "\n")
-    
+
     // Loop through the array of strings
     for counter in 0..<arrayStr.count {
 
